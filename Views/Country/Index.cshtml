@@ -1,0 +1,31 @@
+@model IEnumerable<GlobalCityManager.Models.Country>
+<h1>Countries List</h1>
+<h4>@Html.ActionLink("Add a new country","Create")</h2>
+<table border="1">
+    <tr>
+        <th>National Flag</th><th>Code</th><th>Name</th><th>Region</th><th>Edit</th><th>Remove</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>
+               <img src="@c.NationalFlag" /> 
+            </td>
+            <td>
+                @Html.ActionLink(@c.Code,"Detail", new {code=c.Code})
+            </td>
+            <td>
+                @c.Name
+            </td>
+            <td>
+                @c.Region
+            </td>
+            <td>
+                @Html.ActionLink("Edit","Update",new{code = c.Code})
+            </td>
+            <td>
+                @Html.ActionLink("Remove","Delete",new{code = c.Code})
+            </td>
+        </tr>
+    }
+</table>

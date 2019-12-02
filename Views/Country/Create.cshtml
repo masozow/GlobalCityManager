@@ -1,0 +1,13 @@
+@model GlobalCityManager.Models.Country
+<h1>Add a New Country</h1>
+<form action="Create" method="POST" enctype="multipart/form-data">
+    @Html.LabelFor(c=>c.Code)
+    @Html.TextBoxFor(c=>c.Code)
+    @Html.LabelFor(c=>c.Name)
+    @Html.TextBoxFor(c=>c.Name)
+    @Html.LabelFor(c=>c.Region)
+    @Html.TextBoxFor(c=>c.Region)
+    @Html.Label("Choose local file: ")
+    <input type="file" name="nationalFlagFile" />
+    <input type="submit" value="Add" />
+</form>

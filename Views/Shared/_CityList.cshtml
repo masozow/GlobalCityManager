@@ -1,0 +1,9 @@
+@model GlobalCityManager.Models.City
+<tr>
+    <td>@Model.Id</td>
+    <td>@Model.Name</td>
+    <td>@Model.Population</td>
+    <td>@Model.District</td>
+    <td>@Html.ActionLink(@Model.CountryCode,"Detail","Country",new {code = @Model.CountryCode}) </td>
+    <td>@Html.ActionLink("Edit","Edit",new{id=@Model.Id})</td>
+</tr>

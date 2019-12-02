@@ -1,0 +1,12 @@
+@model IEnumerable<GlobalCityManager.Models.City>
+<h1>Cities list</h1>
+<h4>@Html.ActionLink("Add a New City","Create")</h4>
+<table border="1">
+    <tr>
+        <th>ID</th><th>Name</th><th>Population</th><th>District</th><th>Country</th><th>Edit</th>
+    </tr>
+    @foreach (var ct in Model)
+    {
+        @Html.Partial("_CityList",ct)        
+    }
+</table>
