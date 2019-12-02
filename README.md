@@ -5,4 +5,5 @@ The original code had two namespaces and I had to delete One, also asyncronous p
   
 Advances:
 1. I made all the necessary controllers asyncronous before the first commit
-2. Dependency injection for the DBContext
+2. Connection string moved to appsettings.json
+3. Dependency injection for the DBContext
