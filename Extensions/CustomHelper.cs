@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Html;
 
 namespace Microsoft.AspNetCore.Mvc.Rendering{
     public static class MyHtmlHelperExtensions{
-        public static IHtmlContent ColorfulHeading(this IHtmlHelper htmlHelper, int level, string color, string content){            
+        public static IHtmlContent ColorfulHeading(this IHtmlHelper htmlHelper, int level, 
+                                                   string color, string content){            
             level= level < 1 ? 1 : level;
             level= level > 6 ? 6 : level;
             var tagName=$"h{level}";
@@ -75,7 +76,7 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
             table.Attributes.Add("class","table table-hover");
             var columns =typeof(TModel).GetProperties();
 
-            var headerRow = new TagBuilder("tr");
+            var headerRow = new TagBuilder("thead");
             foreach (var col in columns)
             {
                 var headerCell = new TagBuilder("th");
@@ -110,7 +111,7 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
             table.Attributes.Add("class","table table-hover");
             var columns =typeof(TModel).GetProperties();
 
-            var headerRow = new TagBuilder("tr");
+            var headerRow = new TagBuilder("thead");
             foreach (var col in columns)
             {
                 var headerCell = new TagBuilder("th");

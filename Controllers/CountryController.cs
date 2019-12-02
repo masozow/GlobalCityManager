@@ -37,7 +37,7 @@ namespace GlobalCityManager.Controllers{
         [HttpPost]
         public async Task<IActionResult> Create(Country country, IFormFile nationalFlagFile)
         {
-            //Divide this code, it violates SRP
+            //Divide this code, it violates SRP and DRY
             if(ModelState.IsValid)
             {
                 if (nationalFlagFile!=null&&nationalFlagFile.Length!=0)
