@@ -9,3 +9,4 @@ Advances:
 3. Dependency Injection for the DBContext
 4. Because of the Dependency Inyection I wasn't able to create a new context object in views, so I changed the 
    model to a ViewModel composed of a City object and a list of Countries.
+5. Styling with bootstrap and some custom CSS
