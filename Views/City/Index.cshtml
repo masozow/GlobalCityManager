@@ -9,11 +9,11 @@
         </a>
     
 </div>
-<div class="container">
+<div class="container tableFixHead">
     <table class="table table-hover">
-        <tr class="table-header">
+        <thead>
             <th>ID</th><th>Name</th><th>Population</th><th>District</th><th>Country</th><th>Edit</th>
-        </tr>
+        </thead>
         @foreach (var ct in Model)
         {
             @Html.Partial("_CityList",ct)        

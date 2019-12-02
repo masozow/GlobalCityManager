@@ -1,15 +1,40 @@
 @using GlobalCityManager.Models
 @model CityCountriesVM
-<h1>Add a New City</h1>
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(ct=>ct.City.Name)
-    @Html.TextBoxFor(ct=>ct.City.Name)
-    @Html.LabelFor(ct=>ct.City.Population)
-    @Html.TextBoxFor(ct=>ct.City.Population)
-    @Html.LabelFor(ct=>ct.City.District)
-    @Html.TextBoxFor(ct=>ct.City.District)
-    @Html.LabelFor(ct=>ct.City.CountryCode)
-    @Html.DropDownListFor(ct=>ct.City.CountryCode, new SelectList(Model.Countries,"Code","Name"))
-    <input type="submit" value="Create" />
-}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="text-align:center;">
+            <h1>Add a New City</h1>    
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.LabelFor(ct=>ct.City.Name,new{@class="label"})
+                @Html.TextBoxFor(ct=>ct.City.Name,new{@class="form-control"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(ct=>ct.City.Population,new{@class="label"})
+                @Html.TextBoxFor(ct=>ct.City.Population,new{@class="form-control"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(ct=>ct.City.District,new{@class="label"})
+                @Html.TextBoxFor(ct=>ct.City.District,new{@class="form-control"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(ct=>ct.City.CountryCode,new{@class="label"})
+            @Html.DropDownListFor(ct=>ct.City.CountryCode, new SelectList(Model.Countries,"Code","Name"),new{@class="form-control"})
+            </div>
+            <div class="form-row float-right">
+                    <input type="submit" value="Create" class="btn btn-info" />
+            </div>
+        }
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
