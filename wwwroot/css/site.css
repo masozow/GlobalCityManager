@@ -89,3 +89,7 @@
 /* table  { width: 100vw; } */
 th, td { padding: 1em 2em; min-height: 1em;}
 th     { background: #F8F9FA; }
+img.image{
+    max-width: 150px;
+    max-height: 150px;
+}

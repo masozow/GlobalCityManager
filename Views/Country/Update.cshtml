@@ -1,16 +1,52 @@
 @model GlobalCityManager.Models.Country
-<h1>Add a New Country</h1>
-<form action="Update" method="POST" enctype="multipart/form-data">
-    @Html.Label("Code");
-    @Html.DisplayFor(c=>c.Code)
-    @Html.HiddenFor(c=>c.Code,new{value=@Model.Code})
-    @Html.LabelFor(c=>c.Name)
-    @Html.TextBoxFor(c=>c.Name, new {value=@Model.Name})
-    @Html.LabelFor(c=>c.Region)
-    @Html.TextBoxFor(c=>c.Region, new {value=@Model.Region})
-    <img src="..\@Model.NationalFlag">
-    @Html.HiddenFor(c=>c.NationalFlag, new{value=@Model.NationalFlag})
-    @Html.Label("Choose local file: ")
-    <input type="file" name="nationalFlagFile" />
-    <input type="submit" value="Add" />
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Edit this Country</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="Update" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
+                        @Html.Label("Code","Code",new {@class="label label-default"})
+                    </div>
+                </div>
+                <div class="form-row">
+                    <span class="badge badge-light" style="font-size:1.2em;">@Html.DisplayFor(c=>c.Code)</span>
+                    @Html.HiddenFor(c=>c.Code,new{value=@Model.Code})
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(c=>c.Name)
+                @Html.TextBoxFor(c=>c.Name, new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(c=>c.Region)
+                @Html.TextBoxFor(c=>c.Region, new {@class="form-control"})
+            </div>
+            <div class="form-group text-center">
+                <img src="..\@Model.NationalFlag" class="image">
+                @Html.HiddenFor(c=>c.NationalFlag, new{value=@Model.NationalFlag})
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="nationalFlagFile" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose a local file to change the flag</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row float-right">
+                <input type="submit" value="Update" class="btn btn-info" />
+            </div>
+            </form>
+        </div>     
+        <div class="col-md-3"></div>   
+    </div>
+</div>
+
