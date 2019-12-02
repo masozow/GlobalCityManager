@@ -1,12 +1,27 @@
 @model IEnumerable<GlobalCityManager.Models.City>
-<h1>Cities list</h1>
-<h4>@Html.ActionLink("Add a New City","Create")</h4>
-<table border="1">
-    <tr>
-        <th>ID</th><th>Name</th><th>Population</th><th>District</th><th>Country</th><th>Edit</th>
-    </tr>
-    @foreach (var ct in Model)
-    {
-        @Html.Partial("_CityList",ct)        
-    }
-</table>
+<div class="row">
+    
+        <h2>Cities list</h2>
+    
+    
+        <a href='@Url.Action("Create")' class="btn btn-info btn-circle btn-sm" data-toggle="tooltip" data-placement="right" title="Add a new city" style="margin-top:0.4rem;margin-left:2rem;">
+            <i class="fa fa-plus" style="font-size:1rem;"></i>
+        </a>
+    
+</div>
+<div class="container">
+    <table class="table table-hover">
+        <tr class="table-header">
+            <th>ID</th><th>Name</th><th>Population</th><th>District</th><th>Country</th><th>Edit</th>
+        </tr>
+        @foreach (var ct in Model)
+        {
+            @Html.Partial("_CityList",ct)        
+        }
+    </table>
+</div>
+<script type="text/javascript">
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

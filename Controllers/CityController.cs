@@ -13,12 +13,15 @@ namespace GlobalCityManager.Controllers
             _context=context;
         }
         public async Task<IActionResult> Index(){
-            IList<City> cities = await _context.City.ToListAsync();
+            IList<City> cities =  await _context.City.ToListAsync();
             return View(cities);
         }
         [HttpGet]
-        public IActionResult Create(){
-            return View();
+        public async Task<IActionResult> Create(){
+            CityCountriesVM vm = new CityCountriesVM(){
+                Countries= await _context.Country.ToListAsync()
+            };
+            return View(vm);
         }
         [HttpPost]
         public async Task<IActionResult> Create(City city){
@@ -30,7 +33,11 @@ namespace GlobalCityManager.Controllers
         }
         [HttpGet]
         public async Task<IActionResult> Edit(int id){
-            return View(await _context.City.FindAsync(id));
+            CityCountriesVM vm = new CityCountriesVM(){
+                City=await _context.City.FindAsync(id),
+                Countries= await _context.Country.ToListAsync()
+            };
+            return View(vm);
         }
         
         [HttpPost]

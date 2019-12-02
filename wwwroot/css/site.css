@@ -1,13 +1,13 @@
-﻿body {
+﻿/* body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+} */
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: 0 15px;
+    
 }
 
 /* Carousel */
@@ -36,4 +36,51 @@
 
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.xyz { 
+    background-size: auto; 
+    text-align: center; 
+    padding-top: 100px; 
+} 
+.btn-circle.btn-sm { 
+    width: 30px; 
+    height: 30px; 
+    padding: 6px 0px; 
+    border-radius: 15px; 
+    font-size: 8px; 
+    text-align: center; 
+} 
+.btn-circle.btn-md { 
+    width: 50px; 
+    height: 50px; 
+    padding: 7px 10px; 
+    border-radius: 25px; 
+    font-size: 10px; 
+    text-align: center; 
+} 
+.btn-circle.btn-xl { 
+    width: 70px; 
+    height: 70px; 
+    padding: 10px 16px; 
+    border-radius: 35px; 
+    font-size: 12px; 
+    text-align: center; 
+}
+.personal-centered-footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    display: block;
+    background-color: #F8F9FA;
+    min-width: 100%;
+    height: 3rem;
+}
+.personal-centered-footer .footer-text{
+    position: relative;
+    top:0.8rem;
+    text-align: center;
+} 
+.table-header{
+    background-color: #F8F9FA;
 }

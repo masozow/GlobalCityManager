@@ -1,16 +1,16 @@
 @using GlobalCityManager.Models
-@model City
+@model CityCountriesVM
 <h1>Edit a City</h1>
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(ct=>ct.Id)
-    @Html.LabelFor(ct=>ct.Name)
-    @Html.TextBoxFor(ct=>ct.Name)
-    @Html.LabelFor(ct=>ct.Population)
-    @Html.TextBoxFor(ct=>ct.Population)
-    @Html.LabelFor(ct=>ct.District)
-    @Html.TextBoxFor(ct=>ct.District)
-    @Html.LabelFor(ct=>ct.CountryCode)
-    @Html.DropDownListFor(ct=>ct.CountryCode, new SelectList(new worldContext().Country.ToList(),"Code","Name"))
+    @Html.HiddenFor(ct=>ct.City.Id)
+    @Html.LabelFor(ct=>ct.City.Name)
+    @Html.TextBoxFor(ct=>ct.City.Name)
+    @Html.LabelFor(ct=>ct.City.Population)
+    @Html.TextBoxFor(ct=>ct.City.Population)
+    @Html.LabelFor(ct=>ct.City.District)
+    @Html.TextBoxFor(ct=>ct.City.District)
+    @Html.LabelFor(ct=>ct.City.CountryCode)
+    @Html.DropDownListFor(ct=>ct.City.CountryCode, new SelectList(Model.Countries,"Code","Name"))
     <input type="submit" value="Update" />
 }
