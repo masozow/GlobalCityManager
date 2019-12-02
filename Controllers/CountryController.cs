@@ -10,9 +10,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GlobalCityManager.Controllers{
     public class CountryController:Controller{
-        private worldContext _context = new worldContext();
+        private worldContext _context;
         private IHostingEnvironment _environment;
-        public CountryController(IHostingEnvironment environment){
+        public CountryController(IHostingEnvironment environment,worldContext context){
+            _context=context;
             _environment=environment;
         }
         public async Task <IActionResult> Index(){

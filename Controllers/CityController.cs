@@ -8,9 +8,9 @@ using System.Linq;
 namespace GlobalCityManager.Controllers
 {
     public class CityController:Controller{
-        worldContext _context = new worldContext();
-        public CityController(){
-
+        worldContext _context;
+        public CityController(worldContext context){
+            _context=context;
         }
         public async Task<IActionResult> Index(){
             IList<City> cities = await _context.City.ToListAsync();
