@@ -11,4 +11,4 @@ Advances:
    model to a ViewModel composed of a City object and a list of Countries.
 5. Styling with bootstrap and some custom CSS
 
-**Note** The database script is located at wwwroot/files
+**Note:** The database script is located at wwwroot/files
