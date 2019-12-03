@@ -13,7 +13,7 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
         //2. Image modifier to wrap an specific column, just as NationalFlag one
         //3. String formatter to separate camel-case in different words
         //4. Icons on buttons
-        //5. Exception handling here and at the related classes
+        //5. Exception handling here and in the related classes
         public static IHtmlContent AutomaticTableTypedWithActions<TModel,TResult>(this IHtmlHelper htmlHelper, 
                 Expression<Func<TModel,TResult>> idProperty, IEnumerable<TModel> data,
                 object tableHtmlAttributes,

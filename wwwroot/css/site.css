@@ -82,13 +82,13 @@
     text-align: center;
 } 
 .table-header{
-    background-color: #F8F9FA;
+    background-color:#AAB5A8;
 }
 .tableFixHead          { overflow-y: auto; height: 70vh; }
 .tableFixHead thead th { position: sticky; top: 0; }
 /* table  { width: 100vw; } */
 th, td { padding: 1em 2em; min-height: 1em;}
-th     { background: #F8F9FA; }
+th     { background: #AAB5A8;}
 img.image{
     max-width: 150px;
     max-height: 150px;
