@@ -1,10 +1,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Microsoft.AspNetCore.Mvc.Rendering{
     public static class MyHtmlHelperExtensions{
@@ -102,11 +105,15 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
             return table;
         }
 
-        //this is work in progress. Apply SOLID and DRY because it is too long
+
+
+        //this is work in progress. Apply SOLID and DRY because it is too long and complex
         public static IHtmlContent AutomaticTableTypedWithActions<TModel,TResult>(this IHtmlHelper htmlHelper, 
                 Expression<Func<TModel,TResult>> idProperty, IEnumerable<TModel> data,
-                string editLinkText, string editTargetAction,string editTargetController, 
-                string deleteLinkText, string deleteTargetAction,string deleteTargetController) 
+                string editLinkText, string editTargetAction,string editTargetController,
+                object editHtmlAttributes,
+                string deleteLinkText, string deleteTargetAction,string deleteTargetController,
+                object deleteHtmlAttributes) 
                 where TModel: class,new()
         {
             var table = new TagBuilder("table");
@@ -163,19 +170,26 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
                 var realIdPropety=dType.GetProperty(idPropertyName);
                 var idValue = realIdPropety.GetValue(d);
                 
-                //Making the URL that the actionlink will redirect to
-                var URL =$"/{editTargetController}/{editTargetAction}?{idPropertyName.ToLower()}={idValue.ToString()}";
+                //Making the URL that the actionlink will redirect to. It has a query string format
+                var editURL =$"/{editTargetController}/{editTargetAction}?{idPropertyName.ToLower()}={idValue.ToString()}";
+                //Starting to build the editButton as a Link with btn class
                 var editButton = new TagBuilder("a");
-                editButton.MergeAttribute("href",URL);
+                //Adding the url to the "a" element
+                editButton.MergeAttribute("href",editURL);
+                //Putting the text of the button between the "a" opening and closing tags
                 editButton.InnerHtml.AppendHtml(editLinkText);
-                
+                //Giving the name to the edit button/link
                 editButton.Attributes.Add("id",idPropertyName.ToLower());
-                editButton.Attributes.Add("class","btn btn-warning");
+                //Using AnonymousObjectToHtmlAttributes Net Core built in method
+                var edtHtmlAttr = HtmlHelper.AnonymousObjectToHtmlAttributes(editHtmlAttributes);
+                editButton.MergeAttributes(edtHtmlAttr);
+                //Appending all the elements to their parents
                 dataCell2.InnerHtml.AppendHtml(editButton);
                 dataRow.InnerHtml.AppendHtml(dataCell2);
                 table.InnerHtml.AppendHtml(dataRow);
             }
             return table;
         }
+
     }
 }

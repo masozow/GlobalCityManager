@@ -10,7 +10,7 @@ Advances:
 4. Because of the Dependency Inyection I wasn't able to create a new context object in views, so I changed the 
    model to a ViewModel composed of a City object and a list of Countries.
 5. Styling with bootstrap and some custom CSS
-6. A prototype for a custom helper to generate a table by getting a IEnumerable`<TModel>`, is located at Extensions 
-   Folder and its implementation is at IndexTesting, both View and Controller for Country model.
+6. A prototype for a custom helper to generate a table by getting a `IEnumerable<TModel>`, is located at 
+   Extensions Folder and its implementation is at IndexTesting, both View and Controller for Country model, you can access to the view only this URL: /Country/IndexTesting.
 
 **Note:** The database script is located at wwwroot/files. This is just a test DB, I didn't make it, thats why it doens't have a proper relationship between the tables, foreign key is missing.
