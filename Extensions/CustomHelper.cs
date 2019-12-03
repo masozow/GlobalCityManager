@@ -102,10 +102,12 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
             return table;
         }
 
-        //this is work in progress
+        //this is work in progress. Apply SOLID and DRY because it is too long
         public static IHtmlContent AutomaticTableTypedWithActions<TModel,TResult>(this IHtmlHelper htmlHelper, 
-                Expression<Func<TModel,TResult>> idProperty, string linkText,
-                string targetAction,string targetController, List<TModel> data) where TModel: class,new()
+                Expression<Func<TModel,TResult>> idProperty, IEnumerable<TModel> data,
+                string editLinkText, string editTargetAction,string editTargetController, 
+                string deleteLinkText, string deleteTargetAction,string deleteTargetController) 
+                where TModel: class,new()
         {
             var table = new TagBuilder("table");
             table.Attributes.Add("class","table table-hover");
@@ -120,32 +122,53 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
             }
             var headerCell2 = new TagBuilder("th");
             headerCell2.InnerHtml.Append("Update");
+            headerRow.InnerHtml.AppendHtml(headerCell2);
             table.InnerHtml.AppendHtml(headerRow);
             
             foreach(var d in data)
             {
+                //Making a new row for the table
                 var dataRow = new TagBuilder("tr");
+                //Getting the type of the object whose properties will go individually in every
+                //cell inside the table
                 var dType=d.GetType();
+                //Getting the actual properties
                 var dProperties = dType.GetProperties();
+                //Passing through the properties. With this we're going to make columns
                 foreach(var col in dProperties)
                 {
+                    //Making a tagBuilder to store every value
                     var dataCell = new TagBuilder("td");
+                    //Getting the value of the property
                     var dValue=col.GetValue(d);
+                    //Appending the value to the cell of the row
                     dataCell.InnerHtml.Append(dValue.ToString());
+                    //Appending the cell to the table row
                     dataRow.InnerHtml.AppendHtml(dataCell);
                 }
+
+                //Making the cell where the Edit link will go
                 var dataCell2 = new TagBuilder("td");
-                
+                //Getting the body of the expression redeived to identify which one
+                //is the ID
                 var body = idProperty.Body  as MemberExpression;
-                var idPropertyName = body.Member.Name.ToLower();
+                //Getting the name of the property
+                var idPropertyName = body.Member.Name;
                 //we need to get the value of the property, not the property, just a D.ID will work,
-                //but we need to get the property with idPropertyName inside of d, then get its value
-                var URL =$"/{targetController}/{targetAction}/{idProperty.ToString()}";
+                //but we need to get the property of "d" whose name is the same as idPropertyName 
+                //and with that get idValue, something like this what we want:
+                //var realPropertyID=dProperties.Find(idPropertyName);
+
+                //Getting the value of the property that is the ID
+                var idValue = dType.GetProperty(idPropertyName).GetValue(d);
+                
+                //Making the URL that the actionlink will redirect to
+                var URL =$"/{editTargetController}/{editTargetAction}/{idValue.ToString()}";
                 var editButton = new TagBuilder("a");
                 editButton.MergeAttribute("href",URL);
-                editButton.InnerHtml.AppendHtml(linkText);
+                editButton.InnerHtml.AppendHtml(editLinkText);
                 
-                editButton.Attributes.Add("id",idPropertyName);
+                editButton.Attributes.Add("id",idPropertyName.ToLower());
                 editButton.Attributes.Add("class","btn btn-warning");
                 dataCell2.InnerHtml.AppendHtml(editButton);
                 dataRow.InnerHtml.AppendHtml(dataCell2);
