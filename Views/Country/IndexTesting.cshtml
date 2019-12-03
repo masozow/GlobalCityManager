@@ -1,0 +1,19 @@
+@using GlobalCityManager.Models
+@model List<Country>
+@{
+    var specificModel = Model[0]??new Country();
+}
+<div class="row">
+    <h2>Countries list</h2>
+    <a href='@Url.Action("Create")' class="btn btn-info btn-circle btn-sm" data-toggle="tooltip" data-placement="right" title="Add a New Country" style="margin-top:0.4rem;margin-left:2rem;">
+        <i class="fa fa-plus" style="font-size:1rem;"></i>
+    </a>
+</div>
+<div class="container tableFixHead">
+    @Html.AutomaticTableTypedWithActions(c=>specificModel.Code,Model,"Edit","Update","Country","Delete","Delete","Country")
+</div>
+<script type="text/javascript">
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

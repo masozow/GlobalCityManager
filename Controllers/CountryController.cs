@@ -21,6 +21,11 @@ namespace GlobalCityManager.Controllers{
             return View(countries);
         }
 
+        public async Task <IActionResult> IndexTesting(){
+            IList<Country> countries = await _context.Country.ToListAsync();
+            return View(countries);
+        }
+
         public async Task <IActionResult> Detail(string code){
             var country= await _context.Country.FindAsync(code);
             if(country!=null)

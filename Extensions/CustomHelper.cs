@@ -160,10 +160,11 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
                 //var realPropertyID=dProperties.Find(idPropertyName);
 
                 //Getting the value of the property that is the ID
-                var idValue = dType.GetProperty(idPropertyName).GetValue(d);
+                var realIdPropety=dType.GetProperty(idPropertyName);
+                var idValue = realIdPropety.GetValue(d);
                 
                 //Making the URL that the actionlink will redirect to
-                var URL =$"/{editTargetController}/{editTargetAction}/{idValue.ToString()}";
+                var URL =$"/{editTargetController}/{editTargetAction}?{idPropertyName.ToLower()}={idValue.ToString()}";
                 var editButton = new TagBuilder("a");
                 editButton.MergeAttribute("href",URL);
                 editButton.InnerHtml.AppendHtml(editLinkText);
