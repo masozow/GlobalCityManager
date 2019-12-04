@@ -9,6 +9,3 @@ C:\Users\Marving\Documents\Curso ASP.NET Core MVC\Lab_Starter_Files\Module_5\Sta
 C:\Users\Marving\Documents\Curso ASP.NET Core MVC\Lab_Starter_Files\Module_5\Start\GlobalCityManager\obj\Debug\netcoreapp2.0\GlobalCityManager.AssemblyInfo.cs
 C:\Users\Marving\Documents\Curso ASP.NET Core MVC\Lab_Starter_Files\Module_5\Start\GlobalCityManager\obj\Debug\netcoreapp2.0\GlobalCityManager.dll
 C:\Users\Marving\Documents\Curso ASP.NET Core MVC\Lab_Starter_Files\Module_5\Start\GlobalCityManager\obj\Debug\netcoreapp2.0\GlobalCityManager.pdb
-C:\Users\Marving\Documents\Curso ASP.NET Core MVC\Lab_Starter_Files\Module_5\Start\GlobalCityManager\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-C:\Users\Marving\Documents\Curso ASP.NET Core MVC\Lab_Starter_Files\Module_5\Start\GlobalCityManager\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\Marving\Documents\Curso ASP.NET Core MVC\Lab_Starter_Files\Module_5\Start\GlobalCityManager\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll

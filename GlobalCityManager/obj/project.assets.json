@@ -2423,12 +2423,6 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Microsoft.NET.Test.Sdk/16.5.0-preview-20191115-01": {
-        "type": "package",
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.NET.Test.Sdk.props": {}
-        }
-      },
       "Microsoft.NETCore.App/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -4724,88 +4718,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
-        }
-      },
-      "xunit/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "xunit.analyzers": "0.10.0",
-          "xunit.assert": "[2.4.1]",
-          "xunit.core": "[2.4.1]"
-        }
-      },
-      "xunit.abstractions/2.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.analyzers/0.10.0": {
-        "type": "package"
-      },
-      "xunit.assert/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.4.1]",
-          "xunit.extensibility.execution": "[2.4.1]"
-        },
-        "build": {
-          "build/xunit.core.props": {},
-          "build/xunit.core.targets": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/xunit.core.props": {},
-          "buildMultiTargeting/xunit.core.targets": {}
-        }
-      },
-      "xunit.extensibility.core/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "xunit.abstractions": "2.0.3"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "xunit.extensibility.core": "[2.4.1]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.4.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NET.Test.Sdk": "15.0.0"
-        },
-        "build": {
-          "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       }
     }
@@ -7308,26 +7220,6 @@
         "lib/netstandard2.0/Microsoft.Net.Http.Headers.xml",
         "microsoft.net.http.headers.2.0.3.nupkg.sha512",
         "microsoft.net.http.headers.nuspec"
-      ]
-    },
-    "Microsoft.NET.Test.Sdk/16.5.0-preview-20191115-01": {
-      "sha512": "v7zBisw6TSgURBUTzmi1OxCPgmFaHkby/5pkhZdKPPGVVjUfRaPxv8XCc+Sl3ruDt/poshO34lylyXnvse9fSA==",
-      "type": "package",
-      "path": "microsoft.net.test.sdk/16.5.0-preview-20191115-01",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net40/Microsoft.NET.Test.Sdk.props",
-        "build/net40/Microsoft.NET.Test.Sdk.targets",
-        "build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.cs",
-        "build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.fs",
-        "build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.vb",
-        "build/netcoreapp2.1/Microsoft.NET.Test.Sdk.props",
-        "build/netcoreapp2.1/Microsoft.NET.Test.Sdk.targets",
-        "build/uap10.0/Microsoft.NET.Test.Sdk.props",
-        "buildMultiTargeting/Microsoft.NET.Test.Sdk.props",
-        "microsoft.net.test.sdk.16.5.0-preview-20191115-01.nupkg.sha512",
-        "microsoft.net.test.sdk.nuspec"
       ]
     },
     "Microsoft.NETCore.App/2.0.0": {
@@ -12851,151 +12743,14 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
-    },
-    "xunit/2.4.1": {
-      "sha512": "XNR3Yz9QTtec16O0aKcO6+baVNpXmOnPUxDkCY97J+8krUYxPvXT1szYYEUdKk4sB8GOI2YbAjRIOm8ZnXRfzQ==",
-      "type": "package",
-      "path": "xunit/2.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "xunit.2.4.1.nupkg.sha512",
-        "xunit.nuspec"
-      ]
-    },
-    "xunit.abstractions/2.0.3": {
-      "sha512": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
-      "type": "package",
-      "path": "xunit.abstractions/2.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net35/xunit.abstractions.dll",
-        "lib/net35/xunit.abstractions.xml",
-        "lib/netstandard1.0/xunit.abstractions.dll",
-        "lib/netstandard1.0/xunit.abstractions.xml",
-        "lib/netstandard2.0/xunit.abstractions.dll",
-        "lib/netstandard2.0/xunit.abstractions.xml",
-        "xunit.abstractions.2.0.3.nupkg.sha512",
-        "xunit.abstractions.nuspec"
-      ]
-    },
-    "xunit.analyzers/0.10.0": {
-      "sha512": "4/IDFCJfIeg6bix9apmUtIMwvOsiwqdEexeO/R2D4GReIGPLIRODTpId/l4LRSrAJk9lEO3Zx1H0Zx6uohJDNg==",
-      "type": "package",
-      "path": "xunit.analyzers/0.10.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "analyzers/dotnet/cs/xunit.analyzers.dll",
-        "tools/install.ps1",
-        "tools/uninstall.ps1",
-        "xunit.analyzers.0.10.0.nupkg.sha512",
-        "xunit.analyzers.nuspec"
-      ]
-    },
-    "xunit.assert/2.4.1": {
-      "sha512": "O/Oe0BS5RmSsM+LQOb041TzuPo5MdH2Rov+qXGS37X+KFG1Hxz7kopYklM5+1Y+tRGeXrOx5+Xne1RuqLFQoyQ==",
-      "type": "package",
-      "path": "xunit.assert/2.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard1.1/xunit.assert.dll",
-        "lib/netstandard1.1/xunit.assert.xml",
-        "xunit.assert.2.4.1.nupkg.sha512",
-        "xunit.assert.nuspec"
-      ]
-    },
-    "xunit.core/2.4.1": {
-      "sha512": "Zsj5OMU6JasNGERXZy8s72+pcheG6Q15atS5XpZXqAtULuyQiQ6XNnUsp1gyfC6WgqScqMvySiEHmHcOG6Eg0Q==",
-      "type": "package",
-      "path": "xunit.core/2.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/xunit.core.props",
-        "build/xunit.core.targets",
-        "buildMultiTargeting/xunit.core.props",
-        "buildMultiTargeting/xunit.core.targets",
-        "xunit.core.2.4.1.nupkg.sha512",
-        "xunit.core.nuspec"
-      ]
-    },
-    "xunit.extensibility.core/2.4.1": {
-      "sha512": "yKZKm/8QNZnBnGZFD9SewkllHBiK0DThybQD/G4PiAmQjKtEZyHi6ET70QPU9KtSMJGRYS6Syk7EyR2EVDU4Kg==",
-      "type": "package",
-      "path": "xunit.extensibility.core/2.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/xunit.core.dll",
-        "lib/net452/xunit.core.dll.tdnet",
-        "lib/net452/xunit.core.xml",
-        "lib/net452/xunit.runner.tdnet.dll",
-        "lib/net452/xunit.runner.utility.net452.dll",
-        "lib/netstandard1.1/xunit.core.dll",
-        "lib/netstandard1.1/xunit.core.xml",
-        "xunit.extensibility.core.2.4.1.nupkg.sha512",
-        "xunit.extensibility.core.nuspec"
-      ]
-    },
-    "xunit.extensibility.execution/2.4.1": {
-      "sha512": "7e/1jqBpcb7frLkB6XDrHCGXAbKN4Rtdb88epYxCSRQuZDRW8UtTfdTEVpdTl8s4T56e07hOBVd4G0OdCxIY2A==",
-      "type": "package",
-      "path": "xunit.extensibility.execution/2.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/xunit.execution.desktop.dll",
-        "lib/net452/xunit.execution.desktop.xml",
-        "lib/netstandard1.1/xunit.execution.dotnet.dll",
-        "lib/netstandard1.1/xunit.execution.dotnet.xml",
-        "xunit.extensibility.execution.2.4.1.nupkg.sha512",
-        "xunit.extensibility.execution.nuspec"
-      ]
-    },
-    "xunit.runner.visualstudio/2.4.1": {
-      "sha512": "mBXd1lp1TQr4to2nFv+c4Tf+RnPoQPKglzwLdbdirOUxRaJsCUNDUx2y7E6j9ajgISlTTp1CydFBZCRCUIrwDg==",
-      "type": "package",
-      "path": "xunit.runner.visualstudio/2.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/_common/xunit.abstractions.dll",
-        "build/_common/xunit.runner.reporters.net452.dll",
-        "build/_common/xunit.runner.utility.net452.dll",
-        "build/_common/xunit.runner.visualstudio.testadapter.dll",
-        "build/net20/xunit.runner.visualstudio.props",
-        "build/netcoreapp1.0/xunit.abstractions.dll",
-        "build/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll",
-        "build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll",
-        "build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.xml",
-        "build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.deps.json",
-        "build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll",
-        "build/netcoreapp1.0/xunit.runner.visualstudio.props",
-        "build/uap10.0/xunit.runner.reporters.netstandard11.dll",
-        "build/uap10.0/xunit.runner.utility.uwp10.dll",
-        "build/uap10.0/xunit.runner.utility.uwp10.pri",
-        "build/uap10.0/xunit.runner.visualstudio.props",
-        "build/uap10.0/xunit.runner.visualstudio.targets",
-        "build/uap10.0/xunit.runner.visualstudio.uwp.testadapter.dll",
-        "build/uap10.0/xunit.runner.visualstudio.uwp.testadapter.pri",
-        "xunit.runner.visualstudio.2.4.1.nupkg.sha512",
-        "xunit.runner.visualstudio.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 2.2.4",
-      "Microsoft.NET.Test.Sdk >= 16.5.0-preview-20191115-01",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Pomelo.EntityFrameworkCore.MySql >= 2.2.6",
-      "xunit >= 2.4.1",
-      "xunit.runner.visualstudio >= 2.4.1"
+      "Pomelo.EntityFrameworkCore.MySql >= 2.2.6"
     ]
   },
   "packageFolders": {
@@ -13005,11 +12760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj",
+      "projectUniqueName": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj",
       "projectName": "GlobalCityManager",
-      "projectPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj",
+      "projectPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj",
       "packagesPath": "C:\\Users\\Marving\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\obj\\",
+      "outputPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13047,10 +12802,6 @@
             "target": "Package",
             "version": "[2.2.4, )"
           },
-          "Microsoft.NET.Test.Sdk": {
-            "target": "Package",
-            "version": "[16.5.0-preview-20191115-01, )"
-          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -13060,14 +12811,6 @@
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[2.2.6, )"
-          },
-          "xunit": {
-            "target": "Package",
-            "version": "[2.4.1, )"
-          },
-          "xunit.runner.visualstudio": {
-            "target": "Package",
-            "version": "[2.4.1, )"
           }
         },
         "imports": [
