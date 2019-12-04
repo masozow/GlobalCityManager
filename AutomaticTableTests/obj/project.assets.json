@@ -5062,6 +5062,12 @@
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
         }
       },
+      "xunit.runner.console/2.4.1": {
+        "type": "package",
+        "build": {
+          "build/xunit.runner.console.props": {}
+        }
+      },
       "xunit.runner.visualstudio/2.4.1": {
         "type": "package",
         "dependencies": {
@@ -13683,6 +13689,84 @@
         "xunit.extensibility.execution.nuspec"
       ]
     },
+    "xunit.runner.console/2.4.1": {
+      "sha512": "6yGe+Vx250m1zG/nV8FH1XlftJFoidCThpRdWEIwIFE/rc/lYSuL0M+D1gMDNmZgERAR/sHR18Q/etqd6lxaNA==",
+      "type": "package",
+      "path": "xunit.runner.console/2.4.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/xunit.runner.console.props",
+        "tools/net452/xunit.abstractions.dll",
+        "tools/net452/xunit.console.exe",
+        "tools/net452/xunit.console.exe.config",
+        "tools/net452/xunit.console.x86.exe",
+        "tools/net452/xunit.console.x86.exe.config",
+        "tools/net452/xunit.runner.reporters.net452.dll",
+        "tools/net452/xunit.runner.utility.net452.dll",
+        "tools/net46/xunit.abstractions.dll",
+        "tools/net46/xunit.console.exe",
+        "tools/net46/xunit.console.exe.config",
+        "tools/net46/xunit.console.x86.exe",
+        "tools/net46/xunit.console.x86.exe.config",
+        "tools/net46/xunit.runner.reporters.net452.dll",
+        "tools/net46/xunit.runner.utility.net452.dll",
+        "tools/net461/xunit.abstractions.dll",
+        "tools/net461/xunit.console.exe",
+        "tools/net461/xunit.console.exe.config",
+        "tools/net461/xunit.console.x86.exe",
+        "tools/net461/xunit.console.x86.exe.config",
+        "tools/net461/xunit.runner.reporters.net452.dll",
+        "tools/net461/xunit.runner.utility.net452.dll",
+        "tools/net462/xunit.abstractions.dll",
+        "tools/net462/xunit.console.exe",
+        "tools/net462/xunit.console.exe.config",
+        "tools/net462/xunit.console.x86.exe",
+        "tools/net462/xunit.console.x86.exe.config",
+        "tools/net462/xunit.runner.reporters.net452.dll",
+        "tools/net462/xunit.runner.utility.net452.dll",
+        "tools/net47/xunit.abstractions.dll",
+        "tools/net47/xunit.console.exe",
+        "tools/net47/xunit.console.exe.config",
+        "tools/net47/xunit.console.x86.exe",
+        "tools/net47/xunit.console.x86.exe.config",
+        "tools/net47/xunit.runner.reporters.net452.dll",
+        "tools/net47/xunit.runner.utility.net452.dll",
+        "tools/net471/xunit.abstractions.dll",
+        "tools/net471/xunit.console.exe",
+        "tools/net471/xunit.console.exe.config",
+        "tools/net471/xunit.console.x86.exe",
+        "tools/net471/xunit.console.x86.exe.config",
+        "tools/net471/xunit.runner.reporters.net452.dll",
+        "tools/net471/xunit.runner.utility.net452.dll",
+        "tools/net472/xunit.abstractions.dll",
+        "tools/net472/xunit.console.exe",
+        "tools/net472/xunit.console.exe.config",
+        "tools/net472/xunit.console.x86.exe",
+        "tools/net472/xunit.console.x86.exe.config",
+        "tools/net472/xunit.runner.reporters.net452.dll",
+        "tools/net472/xunit.runner.utility.net452.dll",
+        "tools/netcoreapp1.0/xunit.abstractions.dll",
+        "tools/netcoreapp1.0/xunit.console.deps.json",
+        "tools/netcoreapp1.0/xunit.console.dll",
+        "tools/netcoreapp1.0/xunit.console.dll.config",
+        "tools/netcoreapp1.0/xunit.console.runtimeconfig.json",
+        "tools/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll",
+        "tools/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll",
+        "tools/netcoreapp1.0/xunit.runner.utility.netcoreapp10.xml",
+        "tools/netcoreapp2.0/xunit.abstractions.dll",
+        "tools/netcoreapp2.0/xunit.console.deps.json",
+        "tools/netcoreapp2.0/xunit.console.dll",
+        "tools/netcoreapp2.0/xunit.console.dll.config",
+        "tools/netcoreapp2.0/xunit.console.runtimeconfig.json",
+        "tools/netcoreapp2.0/xunit.runner.reporters.netcoreapp10.dll",
+        "tools/netcoreapp2.0/xunit.runner.utility.netcoreapp10.dll",
+        "tools/netcoreapp2.0/xunit.runner.utility.netcoreapp10.xml",
+        "xunit.runner.console.2.4.1.nupkg.sha512",
+        "xunit.runner.console.nuspec"
+      ]
+    },
     "xunit.runner.visualstudio/2.4.1": {
       "sha512": "mBXd1lp1TQr4to2nFv+c4Tf+RnPoQPKglzwLdbdirOUxRaJsCUNDUx2y7E6j9ajgISlTTp1CydFBZCRCUIrwDg==",
       "type": "package",
@@ -13725,6 +13809,7 @@
       "Microsoft.NET.Test.Sdk >= 16.5.0-preview-20191115-01",
       "Microsoft.NETCore.App >= 2.2.0",
       "xunit >= 2.4.1",
+      "xunit.runner.console >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.1"
     ]
   },
@@ -13735,11 +13820,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
+      "projectUniqueName": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
       "projectName": "AutomaticTableTests",
-      "projectPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
+      "projectPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
       "packagesPath": "C:\\Users\\Marving\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\obj\\",
+      "outputPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13758,8 +13843,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj": {
-              "projectPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj"
+            "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj": {
+              "projectPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj"
             }
           }
         }
@@ -13784,6 +13869,10 @@
             "autoReferenced": true
           },
           "xunit": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "xunit.runner.console": {
             "target": "Package",
             "version": "[2.4.1, )"
           },
