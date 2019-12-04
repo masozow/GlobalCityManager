@@ -10,9 +10,9 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
     public static partial  class MyHtmlHelperExtensions{
         //This is work in progress. Apply SOLID and DRY because it is too long and complex
         //Future modifications:
-        //1. Send the buttons as modiffiers, so they can be attached only when needed
-        //2. Image modifier to wrap an specific column, just as NationalFlag one
-        //3. String formatter to separate camel-case in different words
+        //1. Done (Send the buttons as modiffiers, so they can be attached only when needed)
+        //2. Done (Image modifier to wrap a specific column, just as NationalFlag one)
+        //3. Done (String formatter to separate camel-case in different words)
         //4. Icons on buttons
         //5. Exception handling here and in the related classes
         public static IHtmlContent AutomaticTableTypedWithActions<TModel,TResult>(this IHtmlHelper htmlHelper, 
@@ -22,7 +22,7 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
                 string editLinkText, string editTargetAction,string editTargetController,
                 object editHtmlAttributes,
                 string deleteLinkText, string deleteTargetAction,string deleteTargetController,
-                object deleteHtmlAttributes) 
+                object deleteHtmlAttributes,Expression<Func<TModel,TResult>> imageProperty) 
                 where TModel: class,new()
         {
             //Starting the table and adding attributes to it
@@ -34,10 +34,17 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
             table.InnerHtml.AppendHtml(headerRow);
 
             //Getting the name and value of the expression received to identify which one is the ID
-            var body = idProperty.Body  as MemberExpression;
-            var idPropertyName = body.Member.Name;
+            var bodyId = idProperty.Body  as MemberExpression;
+            var idPropertyName = bodyId.Member.Name;
+
+            //Getting the name and value of the expression received to identify which one is the ID
+            var bodyImg=imageProperty.Body as MemberExpression;
+            var imgPropertyName=bodyImg.Member.Name;
+
             bool firstTime = true;
             Type dType = null;
+            PropertyInfo modelIdPropety = null;
+            PropertyInfo modelImgPropety = null;
             foreach(var d in data)
             {   
                 //Getting the value of model's ID property that belongs to the object "d"
@@ -45,13 +52,18 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
                 {
                     //avoiding the use of reflection all the time
                     dType=d.GetType();
+                    modelIdPropety=dType.GetProperty(idPropertyName);
+                    modelImgPropety=dType.GetProperty(imgPropertyName);
                     firstTime=false;
                 }
-                PropertyInfo modelIdPropety=dType.GetProperty(idPropertyName);
+                //Getting the values of the desired properties
                 object modelIdPropertyValue= modelIdPropety.GetValue(d);
+                object modelImgPropertyValue = modelImgPropety.GetValue(d);
 
                 //Making a new row for the table
-                var dataRow = TableParts.CreateTableRowWithDetail(idPropertyName,modelIdPropertyValue,d,dType,detailLinkTargetAction,detailLinkTargetController);
+                var dataRow = TableParts.CreateTableRowWithDetailAndImage(idPropertyName,modelIdPropertyValue,d,dType,
+                                                                          detailLinkTargetAction,detailLinkTargetController,
+                                                                          imgPropertyName,modelImgPropertyValue);
                 table.InnerHtml.AppendHtml(dataRow);
 
                 //Creating a link button for the Edit action
