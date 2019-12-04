@@ -11,7 +11,7 @@ Advances:
    model to a ViewModel composed of a City object and a list of Countries.
 5. Styling with bootstrap and some custom CSS
 6. A prototype for a custom helper to generate a table by getting a `IEnumerable<TModel>`, is located at 
-   Extensions Folder and its implementation is at IndexTesting, both View and Controller for Country model, you can access to the view by this URL: /Country/IndexTesting, or by the Nav Bar option: `Country (custom Html Helper)`, and watch the code at GlobalCityManager/Extensions.
+   GlobalCityManager/Extensions Folder and its implementation is at IndexTesting, both View and Controller for Country model, you can access to the view by this URL: /Country/IndexTesting, or by the Nav Bar option: `Country (custom Html Helper)`.
 7. I've changed the folder structure to add a XUnit Text Project and a Solution file.
 
 **Note:** The database script is located at wwwroot/files. This is just a test DB, I didn't make it, thats why it doesn't have a proper relationship between the tables, foreign key is missing.
