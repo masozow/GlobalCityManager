@@ -11,7 +11,7 @@ Advances:
    model to a ViewModel composed of a City object and a list of Countries.
 5. Styling with bootstrap and some custom CSS
 6. A prototype for a custom helper to generate a table by getting a `IEnumerable<TModel>`, is located at 
-   Extensions Folder and its implementation is at IndexTesting, both View and Controller for Country model, you can access to the view by this URL: /Country/IndexTesting, or by the Nav Bar option: `Country (custom Html Helper)`
+   Extensions Folder and its implementation is at IndexTesting, both View and Controller for Country model, you can access to the view by this URL: /Country/IndexTesting, or by the Nav Bar option: `Country (custom Html Helper)`, and watch the code at GlobalCityManager/Extensions.
 7. I'm going to change folder structure because I forgot to make a new project to unit test my custom helper 
    "AutomaticTable", then I'm going to add both to a solution.
 
