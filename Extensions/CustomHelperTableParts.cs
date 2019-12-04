@@ -1,6 +1,4 @@
 using System;
-using System.Linq.Expressions;
-using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GlobalCityManager.Extensions{
@@ -38,7 +36,7 @@ namespace GlobalCityManager.Extensions{
             var dataRow = new TagBuilder("tr");
 
             //Initializing a custom link creation
-            ILinkButtonQueryString newLink = new LinkCreation();
+            LinkButtonCreation newLink = new LinkButtonCreation();
             //Passing through the properties. With this we're going to make columns
             var modelProperties = modelInstance.GetType().GetProperties();
             foreach (var col in modelProperties)

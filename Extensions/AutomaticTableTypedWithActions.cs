@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using GlobalCityManager.Extensions;
+using System.Reflection;
 
 namespace Microsoft.AspNetCore.Mvc.Rendering{
     public static partial  class MyHtmlHelperExtensions{
@@ -28,40 +29,43 @@ namespace Microsoft.AspNetCore.Mvc.Rendering{
             var table = new TagBuilder("table");
             table.MergeAttributes(HtmlHelper.AnonymousObjectToHtmlAttributes(tableHtmlAttributes));
             
-            //Create a new row for the hader
+            //Create a new row for the header
             var headerRow = TableParts.CreateTableHeaderRowWithActions<TModel>(new string[]{editLinkText,deleteLinkText});
             table.InnerHtml.AppendHtml(headerRow);
 
             //Getting the name and value of the expression received to identify which one is the ID
             var body = idProperty.Body  as MemberExpression;
             var idPropertyName = body.Member.Name;
+            bool firstTime = true;
+            Type dType = null;
             foreach(var d in data)
             {   
                 //Getting the value of model's ID property that belongs to the object "d"
-                var dType=d.GetType();
-                var modelIdPropety=dType.GetProperty(idPropertyName);
-                var modelIdPropertyValue = modelIdPropety.GetValue(d);
+                if(firstTime)
+                {
+                    //avoiding the use of reflection all the time
+                    dType=d.GetType();
+                    firstTime=false;
+                }
+                PropertyInfo modelIdPropety=dType.GetProperty(idPropertyName);
+                object modelIdPropertyValue= modelIdPropety.GetValue(d);
 
                 //Making a new row for the table
                 var dataRow = TableParts.CreateTableRowWithDetail(idPropertyName,modelIdPropertyValue,d,dType,detailLinkTargetAction,detailLinkTargetController);
                 table.InnerHtml.AppendHtml(dataRow);
 
-                //Making a reusable table cell to attach buttons to it
-                var dataCell = new TagBuilder("td");
                 //Creating a link button for the Edit action
-                ILinkButtonQueryStringHtmlAttr buttons = new LinkButtonCreation();
+                LinkButtonCreation buttons = new LinkButtonCreation();
                 var editButton = buttons.LinkButtonCreate(editTargetAction,editTargetController,editLinkText,
                                                           idPropertyName.ToLower(),modelIdPropertyValue.ToString(),
                                                           editHtmlAttributes);
-                dataCell.InnerHtml.AppendHtml(editButton);
-                dataRow.InnerHtml.AppendHtml(dataCell);
-                dataCell = new TagBuilder("td");
                 //Creating a link button for the Delete action
                 var deleteButton = buttons.LinkButtonCreate(deleteTargetAction,deleteTargetController,deleteLinkText,
                                                           idPropertyName.ToLower(),modelIdPropertyValue.ToString(),
                                                           deleteHtmlAttributes);
-                dataCell.InnerHtml.AppendHtml(deleteButton);
-                dataRow.InnerHtml.AppendHtml(dataCell);
+                //Appending buttons to row
+                RowModificator.AppendCustomCellToRow(ref dataRow,editButton);
+                RowModificator.AppendCustomCellToRow(ref dataRow,deleteButton);
             }
             return table;
         }

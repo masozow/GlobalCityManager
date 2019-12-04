@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.WebUtilities;
 
 namespace GlobalCityManager.Extensions{
-    public class LinkCreation:ILinkButtonQueryString
+    public partial class LinkButtonCreation
     {
         public TagBuilder LinkButtonCreate(string action, string controller, string text, 
                                                     string queryStringName,
