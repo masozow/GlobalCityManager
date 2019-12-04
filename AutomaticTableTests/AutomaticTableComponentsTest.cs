@@ -3,23 +3,19 @@ using System.IO;
 using Xunit;
 using GlobalCityManager.Extensions;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System.Collections.Generic;
+using Xunit.Extensions;
 
 namespace AutomaticTableTests
 {
     public class UnitTest1
     {
-        [Fact]        
-        public void LinkButtonCreate()
+        [Theory,MemberData(nameof(LinkButtonTestCases))]        
+        public void LinkButtonCreate(string action, string controller, string text, string name, string value, object param)
         {
             //Arrange
             LinkButtonCreation buttonCreation = new LinkButtonCreation();
-            string action = "Action";
-            string controller = "Controller";
-            string text = "Text";
-            string name = "Name";
-            string value = "Value";
-            var param = new { @class = "btn" };
-
+            var attributes = HtmlHelper.AnonymousObjectToHtmlAttributes(param);
             //Act
             var button = buttonCreation.LinkButtonCreate(action, controller, text, name, value, param);
             string htmlOutput = "";
@@ -28,21 +24,28 @@ namespace AutomaticTableTests
                 button.WriteTo(writer, System.Text.Encodings.Web.HtmlEncoder.Default);
                 htmlOutput = writer.ToString();
             }
-            string expectedString = CreateStringTag(action, controller, text, name, value, param);
 
             //Assert
-            Assert.Equal(htmlOutput.ToLower().Trim(), expectedString.ToLower().Trim());
-        }
-        private string CreateStringTag(string action, string controller, string text, string name, string value, object param)
-        {
-            var attributes = HtmlHelper.AnonymousObjectToHtmlAttributes(param);
-            string firstPart = "<a";
+            Assert.StartsWith("<a",htmlOutput);
+            Assert.Contains($"href=\"/{controller}/{action}?{name}={value}\"".Trim().ToLower(),htmlOutput.Trim().ToLower());
+            Assert.Contains($"id=\"{action}_{name}_{value}\"".Trim().ToLower(),htmlOutput.Trim().ToLower());
             foreach (var atr in attributes)
             {
-                firstPart += $" {atr.Key}=\"{atr.Value}\"";
+                Assert.Contains($"{atr.Key}=\"{atr.Value}\"".Trim().ToLower(),htmlOutput.Trim().ToLower());
             }
-            string endPart = $" href=\"/{controller}/{action}?{name}={value}\" id=\"{action}_{name}_{value}\">{text}</a>";
-            return firstPart + endPart;
+            Assert.EndsWith($">{text}</a>".Trim().ToLower(),htmlOutput.Trim().ToLower());
+        }
+       
+        public static IEnumerable<object[]> LinkButtonTestCases
+        {
+            get
+            {
+                return new[]
+                {
+                new object[] { "Action", "Controller", "Text", "Name", "Value", new { @class = "btn" } },
+                new object[] { "Action", "Controller", "Text", "Name", "Value", new { @class = "btn btn-info", @style="font-size:1;" } }
+            };
+            }
         }
     }
 }

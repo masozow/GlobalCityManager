@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "bfa590a91fd96bee5ddcb9e58db0975e79ba2a11"
+    "signature": "70ca19db93bd207f8f515e47dc149b61ebccb8d1"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,6 +11,7 @@
           "GlobalCityManager": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.5.0-preview-20191115-01",
           "xunit": "2.4.1",
+          "xunit.runner.console": "2.4.1",
           "xunit.runner.visualstudio": "2.4.1"
         },
         "runtime": {
@@ -3983,6 +3984,7 @@
           }
         }
       },
+      "xunit.runner.console/2.4.1": {},
       "xunit.runner.visualstudio/2.4.1": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "16.5.0-preview-20191115-01"
@@ -6098,6 +6100,13 @@
       "sha512": "sha512-7e/1jqBpcb7frLkB6XDrHCGXAbKN4Rtdb88epYxCSRQuZDRW8UtTfdTEVpdTl8s4T56e07hOBVd4G0OdCxIY2A==",
       "path": "xunit.extensibility.execution/2.4.1",
       "hashPath": "xunit.extensibility.execution.2.4.1.nupkg.sha512"
+    },
+    "xunit.runner.console/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6yGe+Vx250m1zG/nV8FH1XlftJFoidCThpRdWEIwIFE/rc/lYSuL0M+D1gMDNmZgERAR/sHR18Q/etqd6lxaNA==",
+      "path": "xunit.runner.console/2.4.1",
+      "hashPath": "xunit.runner.console.2.4.1.nupkg.sha512"
     },
     "xunit.runner.visualstudio/2.4.1": {
       "type": "package",
