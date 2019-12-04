@@ -14,4 +14,4 @@ Advances:
    GlobalCityManager/Extensions Folder and its implementation is at IndexTesting, both View and Controller for Country model, you can access to the view by this URL: /Country/IndexTesting, or by the Nav Bar option: `Country (custom Html Helper)`.
 7. I've changed the folder structure to add a XUnit Test Project and a Solution file.
 
-**Note:** The database script is located at wwwroot/files. This is just a test DB, I didn't make it, thats why it doesn't have a proper relationship between the tables, foreign key is missing.
+**Note:** The database script is located at wwwroot/files. This is just a test DB, I didn't make it, thats why it doesn't has a proper relationship between the tables, foreign key is missing.
