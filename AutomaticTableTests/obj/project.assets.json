@@ -13820,11 +13820,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
+      "projectUniqueName": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
       "projectName": "AutomaticTableTests",
-      "projectPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
+      "projectPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\AutomaticTableTests.csproj",
       "packagesPath": "C:\\Users\\Marving\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\obj\\",
+      "outputPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\AutomaticTableTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13843,8 +13843,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj": {
-              "projectPath": "C:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj"
+            "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj": {
+              "projectPath": "c:\\Users\\Marving\\Documents\\Curso ASP.NET Core MVC\\Lab_Starter_Files\\Module_5\\Start\\GlobalCityManager\\GlobalCityManager.csproj"
             }
           }
         }
